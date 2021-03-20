@@ -1,0 +1,33 @@
+<div class="app-name">
+    Awsome Bank Account
+    <mat-icon>credit_score</mat-icon>
+</div>
+
+<div class="welcome">
+    <p>Olá, {{accountInfo?.name}}</p>
+    <p>Conta: {{accountInfo?.accountNumber}} </p>
+    <p>Saldo Atual: {{accountInfo?.currentAmount | currency:'BRL':true}}</p>
+    <div class="logout" (click)="logout()">
+        <span>Sair</span>
+        <mat-icon>logout</mat-icon>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<mat-tab-group animationDuration="200MS">
+    <mat-tab label="Histórico Transações">
+        <app-transaction-list></app-transaction-list>
+    </mat-tab>
+    <mat-tab label="Transações em Processamento">
+        <app-operation-request-list> </app-operation-request-list>
+    </mat-tab>
+</mat-tab-group>
+
+
+<mat-divider></mat-divider>
+
+<div class="operation-options">
+    <button (click)="openDialog('Deposit')" mat-raised-button color="primary" type="button">Depósito</button>
+    <button (click)="openDialog('Payment')" mat-raised-button color="primary" type="button">Pagamento</button>
+    <button (click)="openDialog('Withdrawn')" mat-raised-button color="primary" type="button">Resgate</button>
+</div>

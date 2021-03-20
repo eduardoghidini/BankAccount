@@ -1,0 +1,29 @@
+<form class="example-form" [formGroup]="transactionForm" (ngSubmit)="submit()">
+  <h3 mat-dialog-title>Realizar transação - {{getTransactionTypeDescription()}}</h3>
+  <div mat-dialog-content>
+    <div class="form-fiel-container">
+      <mat-form-field>
+        <mat-label>Data</mat-label>
+        <input matInput [min]="minDate" [matDatepicker]="admDate" formControlName="operationDate">
+        <mat-datepicker-toggle matSuffix [for]="admDate"></mat-datepicker-toggle>
+        <mat-datepicker #admDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="form-fiel-container">
+      <mat-form-field>
+        <mat-label>Valor R$</mat-label>
+        <input currencyMask matInput autocomplete="off" formControlName="amount">
+      </mat-form-field>
+    </div>
+    <div class="form-fiel-container">
+      <mat-form-field>
+        <mat-label>Comentários</mat-label>
+        <textarea matInput maxlength="130" formControlName="note"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="dialog-buttons" mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
+    <button mat-raised-button color="primary" cdkFocusInitial type="submit">Salvar</button>
+  </div>
+</form>

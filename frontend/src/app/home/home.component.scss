@@ -1,0 +1,64 @@
+.app-name {
+  display: flex;
+  vertical-align: middle;
+  font-size: 40px;
+  position: absolute;
+  top: 60px;
+  color: #3f51b5;
+  font-weight: 500;
+
+  mat-icon{
+    margin-left: 21px;
+    font-size: 38px;
+    font-weight: 100;
+    margin-top: -7px;
+  }
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 16px 16px 0px;
+
+  p,
+  span {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3f51b5;
+  }
+
+  .logout {
+    &::hover {
+      cursor: pointer;
+    }
+    span {
+      text-decoration: none;
+    }
+
+    mat-icon {
+      font-size: 16px;
+      float: right;
+      padding: 0px;
+      margin: 0px;
+      font-weight: 800;
+      text-align: right;
+      color: #3f51b5;
+      padding-top: 1px;
+    }
+  }
+}
+
+mat-divider {
+  width: 100%;
+  margin: 16px 0px;
+}
+
+.operation-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  button {
+    margin: 0px 12px;
+  }
+}

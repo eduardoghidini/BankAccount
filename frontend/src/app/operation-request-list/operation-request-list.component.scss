@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+
+.icon-refresh {
+  box-shadow: none;
+  float: right;
+  margin: 16px 0;
+  float: right;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
