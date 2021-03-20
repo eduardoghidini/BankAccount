@@ -14,7 +14,7 @@ namespace BankAccount.Warren.Database.Migrations
                 {
                     id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    use_name = table.Column<string>(maxLength: 20, nullable: true),
+                    user_name = table.Column<string>(maxLength: 20, nullable: true),
                     password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -54,7 +54,8 @@ namespace BankAccount.Warren.Database.Migrations
                     operation_type = table.Column<int>(nullable: false),
                     note = table.Column<string>(maxLength: 130, nullable: true),
                     account_id = table.Column<int>(nullable: false),
-                    amount = table.Column<decimal>(nullable: false)
+                    amount = table.Column<decimal>(nullable: false),
+                    operation_date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -110,6 +111,11 @@ namespace BankAccount.Warren.Database.Migrations
                 name: "IX_account_operation_request_account_id",
                 table: "account_operation_request",
                 column: "account_id");
+
+            migrationBuilder.InsertData("user", columns: new[] { "id", "user_name", "password" }, new object[] { 1, "my_user", "abc@123" });
+
+            migrationBuilder.InsertData("account", columns: new[] { "id", "owner_name", "current_balance", "applied_balance", "account_number","user_id" }, 
+                new object[] { 1, "Default Account", 100, 0, "921855", 1 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

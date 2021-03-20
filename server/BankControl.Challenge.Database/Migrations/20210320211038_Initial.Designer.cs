@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankAccount.Warren.Database.Migrations
 {
     [DbContext(typeof(BankAccountDbContext))]
-    [Migration("20210320070439_AddOperationDateColumn")]
-    partial class AddOperationDateColumn
+    [Migration("20210320211038_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -167,7 +167,7 @@ namespace BankAccount.Warren.Database.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("UserName")
-                        .HasColumnName("use_name")
+                        .HasColumnName("user_name")
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
                         .HasMaxLength(20);
 

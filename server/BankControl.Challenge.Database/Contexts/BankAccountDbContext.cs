@@ -1,4 +1,5 @@
 ﻿using BankAccount.Warren.Database.Mappings;
+using BankAccount.Warren.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankAccount.Warren.Database.Contexts

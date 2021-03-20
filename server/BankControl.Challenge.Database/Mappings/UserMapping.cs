@@ -15,7 +15,7 @@ namespace BankAccount.Warren.Database.Mappings
 
             builder
                 .Property(_ => _.UserName)
-                .HasColumnName("use_name")
+                .HasColumnName("user_name")
                 .HasMaxLength(20);
 
             builder

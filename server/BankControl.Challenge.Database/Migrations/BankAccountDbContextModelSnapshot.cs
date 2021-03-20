@@ -165,7 +165,7 @@ namespace BankAccount.Warren.Database.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("UserName")
-                        .HasColumnName("use_name")
+                        .HasColumnName("user_name")
                         .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
                         .HasMaxLength(20);
 

@@ -40,5 +40,14 @@ As operações que o usuário realiza são "OperationsRequest" que são requisi�
 O job de realização de transação é responsável por identificar qual tipo de operação e realizar o procedimento corretamente.  Caso tudo esteja correto com as validações de cada operação, a operação em si é criada e o saldo atualizado. Existe uma factory que identifica qual tipo de operação e devolve o comando correto. Caso, futuramente, sejam criados novos tipos de operação, seria necessário apenas criar um comandhandler (mediatr) vinculando, na factory, o comando e o tipo.
 O terceiro job (recurrencyjob) acontece uma vez ao dia e é responsável por rentabilizar o dinheiro da conta corrente do usuário, através do %¨cid configurado na aplicação.
 
+#### Instalação
 
+Na pasta principal da solução rodar o comando de instalação do banco:
+`docker-compose up`
 
+Rodar as migrations no projeto BankAccount.Warren.Database, através do seguinte comendo:
+`dotnet ef database update`
+
+Nota: neste momento será criado um usuário e uma conta para utilizar o sistema e a api, que são:
+user: *my_user*
+password: *abc@123*
